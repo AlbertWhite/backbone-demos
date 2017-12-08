@@ -1,0 +1,1 @@
+View: organize your interface into logical views, backed by models. You can bind your view's render function to the model's "change" event 
