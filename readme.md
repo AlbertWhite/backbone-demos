@@ -14,3 +14,17 @@ Render method in view takes the template, pass object as values, return this for
 Another kind of view is templated based component. We can CRUD them. 
 
 Backbone use 'model' and 'Collecion' to help with managing the data. We can add 'events' listener for the collections. 
+
+### View
+View is structured dom element, with id, attributes, className, registered events, el (dom). With $el, view can be played with jquery.
+View can be linked with a existing dom element, or an empty element which will be appended dynamically leter.
+
+Use unnderscore template with backbone view, template can be used to interpolate values.
+
+### Model
+Model attributes: get, set, attributes, has, unset, clear()
+Defaults set default attributes.
+bind change function, changedAttributes() get changed attributes.
+Use model.toJSON() to parse to object.
+Three ways to set attributes: 1. new Model({attributes}) 2. defaults 3. set()
+model.sync(method, model) method: create, read, update, delete.
