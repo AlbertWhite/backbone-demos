@@ -1,17 +1,5 @@
 var UserModel = Backbone.Model.extend();
 
-var jsonData = [
-    {
-        "id": 1,
-        "title": "Pulp Fiction"
-    },
-    {
-        "id": 2,
-        "title": "The Usual Suspects"
-    },
-]
-
-
 var UserCollection = Backbone.Collection.extend({
   url: 'http://5a4a7c58b652640012c2bcb4.mockapi.io/users',
   model: UserModel,
@@ -27,24 +15,33 @@ var UserCollection = Backbone.Collection.extend({
   // }
 });
 
-
 var UserView = Backbone.View.extend({
+  render: function(){//in render function, we do the job of updating data
+    this.$el.html('<li>'+this.model.get('name')+'</li>');
+    return this;
+  }
+});
+
+var UserListView = Backbone.View.extend({
   el: '#users',
+  model: UserModel,
+  initialize: function(){//get data and render
+    //on function, callback no need for ()
+    this.collection.on('sync', this.render, this); //add listener for collection
+  },
   render: function() {
-    
+    this.collection.each(function(model){
+      var userView = new UserView({
+        model: model
+      });
+      this.$el.append(userView.render().el);
+    }, this);//add this: keep the same context in the callback function
   }
 });
 
 
 var userCollection = new UserCollection();
-var userView = new UserView({model: userCollection});
-
-userCollection.bind('reset', function(){
-  console.log("reset");
-  console.log(userCollection);
-  debugger;
-  userView.render();
-});
+var UserListView = new UserListView({collection: userCollection});
 
 userCollection.fetch({
   success: function(collection, response){

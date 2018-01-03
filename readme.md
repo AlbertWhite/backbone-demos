@@ -28,3 +28,8 @@ bind change function, changedAttributes() get changed attributes.
 Use model.toJSON() to parse to object.
 Three ways to set attributes: 1. new Model({attributes}) 2. defaults 3. set()
 model.sync(method, model) method: create, read, update, delete.
+
+Pass collection to list view, pass model to item view.
+Pass this as the third parameter in on function to keep the same context (this) in the callback function.
+
+listen for collection change, render list, render view.
