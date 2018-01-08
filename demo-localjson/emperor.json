@@ -1,14 +1,112 @@
 [
-	{
-		"id":1,
-		"name":"唐高祖",
-		"startyear":618,
-		"endyear":626
-	},
-	{
-		"id":2,
-		"name":"唐太宗",
-		"startyear":626,
-		"endyear":649
-	}
+  {
+    "name":"唐高祖",
+    "startyear":618,
+    "endyear": 626
+  },
+  {
+    "name":"唐太宗",
+    "startyear":627,
+    "endyear": 649
+  },
+  {
+    "name":"唐高宗",
+    "startyear":650,
+    "endyear": 683
+  },
+  {
+    "name":"唐中宗",
+    "startyear":684,
+    "endyear": 684
+  },
+  {
+    "name":"唐睿宗",
+    "startyear":684,
+    "endyear": 690
+  },
+  {
+    "name":"武后",
+    "startyear":690,
+    "endyear": 705
+  },
+  {
+    "name":"唐中宗",
+    "startyear":705,
+    "endyear": 710
+  },
+  {
+    "name":"唐睿宗",
+    "startyear":710,
+    "endyear": 712
+  },
+  {
+    "name":"唐玄宗",
+    "startyear":712,
+    "endyear": 756
+  },
+  {
+    "name":"唐肃宗",
+    "startyear":756,
+    "endyear": 762
+  },
+  {
+    "name":"唐代宗",
+    "startyear":762,
+    "endyear": 779
+  },
+  {
+    "name":"唐德宗",
+    "startyear":780,
+    "endyear": 805
+  },
+  {
+    "name":"唐宪宗",
+    "startyear":806,
+    "endyear": 820
+  },
+  {
+    "name":"唐穆宗",
+    "startyear":821,
+    "endyear": 824
+  },
+  {
+    "name":"唐敬宗",
+    "startyear":824,
+    "endyear": 826
+  },
+  {
+    "name":"唐文宗",
+    "startyear":826,
+    "endyear": 840
+  },
+  {
+    "name":"唐武宗",
+    "startyear":841,
+    "endyear": 846
+  },
+  {
+    "name":"唐宣宗",
+    "startyear":847,
+    "endyear": 859
+  },
+  {
+    "name":"唐懿宗",
+    "startyear":859,
+    "endyear": 873
+  },
+  {
+    "name":"唐僖宗",
+    "startyear":873,
+    "endyear": 888
+  },
+  {
+    "name":"唐昭宗",
+    "startyear":889,
+    "endyear": 904
+  },
+  {
+    "name":"唐哀帝",
+    "startyear":904,
+    "endyear": 907
+  }
 ]
