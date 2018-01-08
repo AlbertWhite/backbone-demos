@@ -26,6 +26,8 @@ var TimeLineView = Backbone.View.extend({
     var timetext = $.parseHTML("<div class='time-text'>"+ this.model.get('name') + this.model.get('startyear')+ "</div>");
 
     $(timebar).css('height', height*5+'px');
+    $(timeline).css('height', height*5+'px');
+    
     $(timeline).append(timetext);
     $(timeline).append(timebar);
     this.$el.html(timeline);
