@@ -1,0 +1,14 @@
+[
+	{
+		"id":1,
+		"name":"唐高祖",
+		"startyear":618,
+		"endyear":626
+	},
+	{
+		"id":2,
+		"name":"唐太宗",
+		"startyear":626,
+		"endyear":649
+	}
+]
