@@ -1,4 +1,4 @@
-var UserModel = Backbone.Model.extend({
+var TimelineModel = Backbone.Model.extend({
   defaults: {
     'id':0,
     'name':'',
@@ -7,43 +7,53 @@ var UserModel = Backbone.Model.extend({
   }
 });
 
-var UserCollection = Backbone.Collection.extend({
+var TimeLineCollection = Backbone.Collection.extend({
   url: './emperor.json',
-  model: UserModel,
+  model: TimelineModel,
 });
 
-var UserView = Backbone.View.extend({
+var TimeLineView = Backbone.View.extend({
 
   events: {
   },
   tagName: 'div',
   render: function(){
-    this.$el.html('<div>'+this.model.get('name')+'</div>');
+
+    var height = parseInt(this.model.get("endyear"))-parseInt(this.model.get("startyear"));
+    
+    var timeline = $.parseHTML("<div class='time-line'></div>");
+    var timebar = $.parseHTML("<div class='time-bar'></div>");
+    var timetext = $.parseHTML("<div class='time-text'>"+ this.model.get('name') + this.model.get('startyear')+ "</div>");
+
+    $(timebar).css('height', height*5+'px');
+    $(timeline).append(timetext);
+    $(timeline).append(timebar);
+    this.$el.html(timeline);
     return this;
   }
 });
 
-var UserListView = Backbone.View.extend({
-  el: '.timeline',
-  model: UserModel,
+var TimeLineContainerView = Backbone.View.extend({
+  el: '.timeline-container',
+  model: TimelineModel,
   initialize: function(){
     this.collection.on('sync', this.render, this);
   },
   render: function() {
     this.collection.each(function(model){
-      var userView = new UserView({
+      var timeLineView = new TimeLineView({
         model: model
       });
-      this.$el.append(userView.render().el);
+      this.$el.append(timeLineView.render().el);
     }, this);
   }
 });
 
 
-var userCollection = new UserCollection();
-var userListView = new UserListView({collection: userCollection});
+var timeLineCollection = new TimeLineCollection();
+var timeLineContainerView = new TimeLineContainerView({collection: timeLineCollection});
 
-userCollection.fetch({
+timeLineCollection.fetch({
   success: function(collection, response){
     console.log(collection);
     console.log(response);
